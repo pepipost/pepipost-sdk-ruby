@@ -10,15 +10,16 @@ This SDK uses the Unirest library.
 
 Installation: 
 =============
-    1. Run the build command
-        ```
-        gem build pepipost_apiv_10.gemspec
-        ```
+Run the build command
 
-    2. Run the install command  
-        ```
-        gem install ./pepipost_apiv_10-1.0.0.gem
-        ```
+```
+gem build pepipost_apiv_10.gemspec
+```
+
+Run the install command  
+```
+gem install ./pepipost_apiv_10-1.0.0.gem
+```
 Usage:
 ===========
 ```ruby
