@@ -8,18 +8,13 @@ This SDK requires the Unirest library.
 
 Installation: 
 =============
-Run the build command
-
-```
-gem build pepipost_sdk_ruby.gemspec
+```shell
+gem install pepipost_sdk_ruby
 ```
 
-Run the install command  
-```
-gem install ./pepipost_sdk_ruby-1.0.0.gem
-```
 Usage:
 ===========
+create ***example.rb*** and put the below code in it
 ```ruby
 require 'pepipost_sdk_ruby'
 
@@ -41,6 +36,29 @@ response = email.send data
 print response
 
 ```
+
+Now run it with ruby
+
+```shell
+ruby example.rb
+```
+
+
+Build
+=====
+Run the build command
+```
+mkdir pepipost-sdk-ruby
+cd pepipost-sdk-ruby
+git clone https://github.com/pepipost/pepipost-sdk-ruby.git .
+gem build pepipost_sdk_ruby.gemspec
+```
+
+Run the install command  
+```
+gem install ./pepipost_sdk_ruby-1.0.0.gem
+```
+
 
 ## Author
 
