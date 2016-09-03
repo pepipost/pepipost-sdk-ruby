@@ -1,4 +1,4 @@
-require 'pepipost_apiv_10'
+require 'pepipost_sdk_ruby'
 
 data = {
     "api_key"=>"yoursecretapikey",
@@ -12,7 +12,7 @@ data = {
 }
 
 
-email = PepipostApiv10::Email.new 
+email = PepipostSdkRuby::Email.new 
 response = email.send data
 
 print response

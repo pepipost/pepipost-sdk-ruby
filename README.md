@@ -11,17 +11,17 @@ Installation:
 Run the build command
 
 ```
-gem build pepipost_apiv_10.gemspec
+gem build pepipost_sdk_ruby.gemspec
 ```
 
 Run the install command  
 ```
-gem install ./pepipost_apiv_10-1.0.0.gem
+gem install ./pepipost_sdk_ruby-1.0.0.gem
 ```
 Usage:
 ===========
 ```ruby
-require 'pepipost_apiv_10'
+require 'pepipost_sdk_ruby'
 
 data = { 
     "api_key"=>"yoursecretapikey",
@@ -35,7 +35,7 @@ data = {
 }
 
 
-email = PepipostApiv10::Email.new 
+email = PepipostSdkRuby::Email.new 
 response = email.send data
 
 print response
