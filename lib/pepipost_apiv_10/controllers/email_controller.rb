@@ -58,7 +58,7 @@ module PepipostApiv10
 
       # prepare headers
       headers = {
-        'user-agent' => 'APIMATIC 2.0',
+        'user-agent' => 'pepipost-sdk-ruby',
         'accept' => 'application/json'
       }
 
@@ -94,7 +94,7 @@ module PepipostApiv10
 
       # prepare headers
       headers = {
-        'user-agent' => 'APIMATIC 2.0',
+        'user-agent' => 'pepipost-sdk-ruby',
         'accept' => 'application/json',
         'content-type' => 'application/json; charset=utf-8'
       }
