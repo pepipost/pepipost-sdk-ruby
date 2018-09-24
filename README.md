@@ -1,6 +1,7 @@
 ![pepipostlogo](https://pepipost.com/assets/img/pepipost-footLogo.png)
 
 [![Gem Version](https://badge.fury.io/rb/pepipost_gem.svg)](https://badge.fury.io/rb/pepipost_gem)
+[![Open Source Helpers](https://www.codetriage.com/pepipost/pepipost-sdk-ruby/badges/users.svg)](https://www.codetriage.com/pepipost/pepipost-sdk-ruby)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.txt)
 [![Twitter Follow](https://img.shields.io/twitter/follow/pepi_post.svg?style=social&label=Follow)](https://twitter.com/pepi_post)
 
