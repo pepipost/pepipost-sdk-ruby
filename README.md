@@ -1,141 +1,180 @@
-# Getting started
+![pepipostlogo](https://pepipost.com/assets/img/pepipost-footLogo.png)
 
-Pepipost is a cloud-based SMTP relay service that delivers highly personalised transactional emails to the inbox within seconds of your customer’s transaction
+[![Gem Version](https://badge.fury.io/rb/pepipost_gem.svg)](https://badge.fury.io/rb/pepipost_gem)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.txt)
+[![Twitter Follow](https://img.shields.io/twitter/follow/pepi_post.svg?style=social&label=Follow)](https://twitter.com/pepi_post)
 
-## How to Build
+# Official Ruby Gem :gem: for [Pepipost](http://www.pepipost.com/?utm_campaign=GitHubSDK&utm_medium=GithubSDK&utm_source=GithubSDK)
 
-This client library is a Ruby gem which can be compiled and used in your Ruby and Ruby on Rails project. This library requires a few gems from the RubyGems repository.
+This gem contains methods for easily interacting with the Pepipost Email Sending API to send emails within few seconds.
 
-1. Open the command line interface or the terminal and navigate to the folder containing the source code.
-2. Run ``` gem build pepipost_gem.gemspec ``` to build the gem.
-3. Once built, the gem can be installed on the current work environment using ``` gem install pepipost_gem-2.5.0.gem ```
+We are trying to make our libraries a Community Driven. To help us building right things in proper order we would request you to help us by sharing comments, creating new issues or pull request.
+
+## Table of Content
+* [Installation](#installation)
+* [Quick Start](#quickstart)
+* [Sample Example](#steps)
+* [Announcements](#announcements)
+* [Roadmap](#roadmap)
+* [About](#about)
+* [License](#license)
+
+
+<a name="installation"></a>
+## Installation 
+   
+There are two ways of installing this Pepipost gem. You can use either of the below: 
+
+``` gem install pepipost_gem``` 
+
+Once pepipost_gem is installed, use the sample example to [send test email](#steps). 
+
+**OR**
+
+### Manually generate your own pepipost gem 
+
+This client library is a Ruby gem which can be compiled and used in your Ruby on Rails project. This library requires a few gems from the RubyGems repository.
+
+* Open the command line interface/terminal and navigate to the folder of your choice and run the below commands to download and navigate to the downloaded folder:
+``` git clone https://github.com/pepipost/pepipost-sdk-ruby.git ```
+``` cd pepipost-sdk-ruby ``` 
+
+* ``` gem build build pepipost_gem.gemspec ``` to build the gem.
+* ``` gem install pepipost_gem-2.5.0.gem ``` to install pepipost gem
 
 ![Building Gem](https://apidocs.io/illustration/ruby?step=buildSDK&workspaceFolder=pepipost_gem-Ruby&workspaceName=pepipost_gem-Ruby&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
 
-## How to Use
+<a name="quickstart"></a>
+## Quickstart
 
-The following section explains how to use the PepipostGem Ruby Gem in a new Rails project using RubyMine&trade;. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
+The following section explains how to use the Pepipost Gem in a new Rails project using RubyMine.
 
-### 1. Starting a new project
+The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
 
-Close any existing projects in RubyMine&trade; by selecting ``` File -> Close Project ```. Next, click on ``` Create New Project ``` to create a new project from scratch.
+1. Starting a new project
 
-![Create a new project in RubyMine](https://apidocs.io/illustration/ruby?step=createNewProject0&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
+   Close any existing projects in RubyMine by selecting:
 
-Next, provide ``` TestApp ``` as the project name, choose ``` Rails Application ``` as the project type, and click ``` OK ```.
+   * ``` File -> Close Project ``` 
+   * Next, click on ``` Create New Project ``` to create a new project from scratch.
 
-![Create a new Rails Application in RubyMine - step 1](https://apidocs.io/illustration/ruby?step=createNewProject1&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
+   ![Create a new project in RubyMine](https://apidocs.io/illustration/ruby?step=createNewProject0&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
 
-In the next dialog make sure that correct *Ruby SDK* is being used (minimum 2.0.0) and click ``` OK ```.
+   * Next, provide ``` TestApp ``` as the project name.
+   * Choose ``` Rails Application ``` as the project type.
+   * Click ``` OK ```.
 
-![Create a new Rails Application in RubyMine - step 2](https://apidocs.io/illustration/ruby?step=createNewProject2&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
+   ![Create a new Rails Application in RubyMine - step 1](https://apidocs.io/illustration/ruby?step=createNewProject1&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
 
-This will create a new Rails Application project with an existing set of files and folder.
+     In the next dialog make sure that correct *Ruby SDK* is being used (minimum 2.0.0) 
+   * click ``` OK ```.
 
-### 2. Add reference of the gem
+   ![Create a new Rails Application in RubyMine - step 2](https://apidocs.io/illustration/ruby?step=createNewProject2&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
 
-In order to use the PepipostGem gem in the new project we must add a gem reference. Locate the ```Gemfile``` in the *Project Explorer* window under the ``` TestApp ``` project node. The file contains references to all gems being used in the project. Here, add the reference to the library gem by adding the following line: ``` gem 'pepipost_gem', '~> 2.5.0' ```
+   This will create a new Rails Application project with an existing set of files and folder.
 
-![Add references of the Gemfile](https://apidocs.io/illustration/ruby?step=addReference&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
+2. Add reference of the gem
+   
+   * In order to use the Pepipost gem in the new project, add a gem reference.
+   * Locate the ```Gemfile``` in the *Project Explorer* window under the ``` TestApp ``` project node.
+   * The file contains references to all gems being used in the project. Here, add the reference to the library gem by adding the following line:
+    ``` gem 'pepipost_gem', '~> 2.5.0' ```
 
-### 3. Adding a new Rails Controller
+   ![Add references of the Gemfile](https://apidocs.io/illustration/ruby?step=addReference&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
 
-Once the ``` TestApp ``` project is created, a folder named ``` controllers ``` will be visible in the *Project Explorer* under the following path: ``` TestApp > app > controllers ```. Right click on this folder and select ``` New -> Run Rails Generator... ```.
+3. Adding a new Rails Controller
 
-![Run Rails Generator on Controllers Folder](https://apidocs.io/illustration/ruby?step=addCode0&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
+   * Once the ``` TestApp ``` project is created.
+   * Folder named ``` controllers ``` will be visible in the *Project Explorer* under the following path:
+     ``` TestApp > app > controllers ```. 
+   * Right click on this folder.
+   * select ``` New -> Run Rails Generator ```.
 
-Selecting the said option will popup a small window where the generator names are displayed. Here, select the ``` controller ``` template.
+   ![Run Rails Generator on Controllers Folder](https://apidocs.io/illustration/ruby?step=addCode0&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
 
-![Create a new Controller](https://apidocs.io/illustration/ruby?step=addCode1&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
+   * Selecting the said option will popup a small window where the generator names are displayed.
+   * select the ``` controller ``` template.
 
-Next, a popup window will ask you for a Controller name and included Actions. For controller name provide ``` Hello ``` and include an action named ``` Index ``` and click ``` OK ```.
+   ![Create a new Controller](https://apidocs.io/illustration/ruby?step=addCode1&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
 
-![Add a new Controller](https://apidocs.io/illustration/ruby?step=addCode2&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
+   * A  popup window will ask you for a Controller name and included Actions.
+   * For controller name provide ``` Hello ```.
+   * Include an action named ``` Index ```. 
+   * Click ``` OK ```.
 
-A new controller class anmed ``` HelloController ``` will be created in a file named ``` hello_controller.rb ``` containing a method named ``` Index ```. In this method, add code for initialization and a sample for its usage.
+   ![Add a new Controller](https://apidocs.io/illustration/ruby?step=addCode2&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
 
-![Initialize the library](https://apidocs.io/illustration/ruby?step=addCode3&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
+   * A new controller class anmed ``` HelloController ``` will be created in a file named ``` hello_controller.rb ``` containing a method named ``` Index ```.
+   * In this method, copy [sample example](#steps).
+   * Run your project.
 
-## How to Test
+   ![Initialize the library](https://apidocs.io/illustration/ruby?step=addCode3&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
 
-You can test the generated SDK and the server with automatically generated test
-cases as follows:
-
-  1. From terminal/cmd navigate to the root directory of the SDK.
-  2. Invoke: `bundle exec rake`
-
-## Initialization
-
-### 
-
-API client can be initialized as following.
-
-```ruby
-
-client = PepipostGem::PepipostGemClient.new
-```
-
-The added initlization code can be debugged by putting a breakpoint in the ``` Index ``` method and running the project in debug mode by selecting ``` Run -> Debug 'Development: TestApp' ```.
-
-![Debug the TestApp](https://apidocs.io/illustration/ruby?step=addCode4&workspaceFolder=pepipost_gem-Ruby&workspaceName=PepipostGem&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0&initLine=client%2520%253D%2520PepipostGemClient.new)
-
-
-
-# Class Reference
-
-## <a name="list_of_controllers"></a>List of Controllers
-
-* [EmailController](#email_controller)
-
-## <a name="email_controller"></a>![Class: ](https://apidocs.io/img/class.png ".EmailController") EmailController
-
-### Get singleton instance
-
-The singleton instance of the ``` EmailController ``` class can be accessed from the API Client.
+<a name="steps"></a>
+## Usage
 
 ```ruby
+require 'pepipost_gem'
+require 'json'
+include PepipostGem
+
+client = PepipostGemClient.new
 email_controller = client.email
-```
-
-### <a name="create_send_email"></a>![Method: ](https://apidocs.io/img/method.png ".EmailController.create_send_email") create_send_email
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> This Endpoint sends emails with the credentials passed.
-
-
-```ruby
-def create_send_email(api_key = nil,
-                          body = nil); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| api_key |  ``` Optional ```  | Generated header parameter. Example value ='5ce7096ed4bf2b39dfa932ff5fa84ed9ed8' |
-| body |  ``` Optional ```  | The body passed will be json format. |
-
-
-#### Example Usage
-
-```ruby
-api_key = 'api_key'
+api_key = 'api-key-here'
 body = EmailBody.new
 
-result = email_controller.create_send_email(api_key, body)
+body.personalizations = []
+body.personalizations[0] = Personalizations.new
+body.personalizations[0].recipient = 'your-rcpt-email@gmail.com'
 
+body.tags = 'tags'
+body.from = From.new
+body.from.from_email = 'from-email-here@pepipost.com'
+body.from.from_name = 'info'
+body.subject = 'Check1'
+body.content = 'test ruby'
+body.settings = Settings.new
+
+body.settings.footer = 0
+body.settings.clicktrack = 1
+body.settings.opentrack = 1
+body.settings.unsubscribe = 1
+
+begin
+        result = email_controller.create_send_email(api_key, body)
+        puts JSON.pretty_generate(result)
+rescue APIException => ex
+        puts "Caught APIException: #{ex.message}"
+end
 ```
 
-#### Errors
+* Change your api-key and sending domain respectively
+  * **apikey** will be available under Login to Pepipost -> Settings -> Integration  
+  * **Sending Domain** will be available under Login to Pepiost -> Settings -> Sending Domains 
+  
+```
+  *Note :: Domains showing with Active status on Sending Domain dashboard are only allowed to send any sort of emails.* In case there are no Sending Domain added under your account, then first add the domain, get the DNS (SPF/DKIM) settings done and get it reviewed by our compliance team for approval. Once the domain is approved, it will be in ACTIVE status and will be ready to send any sort of emails. 
+```
+* Save above file as sendEmail.rb
+* run ``` ruby sendEmail.rb ```
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Method not allowed |
+<a name="announcements"></a>
+# Announcements
 
+v2.5.0 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-ruby/releases/) for details.
 
+All updates to this library are documented in our [releases](https://github.com/pepipost/pepipost-sdk-ruby/releases). For any queries, feel free to reach out us at dx@pepipost.com
 
-[Back to List of Controllers](#list_of_controllers)
+<a name="roadmap"></a>
+## Roadmap
 
+If you are interested in the future direction of this project, please take a look at our open [issues](https://github.com/pepipost/pepipost-sdk-ruby/issues) and [pull requests](https://github.com/pepipost/pepipost-sdk-ruby/pulls). We would love to hear your feedback.
 
+<a name="about"></a>
+## About
+pepipost-sdk-ruby library is guided and supported by the [Pepipost Developer Experience Team](https://github.com/orgs/pepipost/teams/pepis/members) .
+This pepipost gem is maintained and funded by Pepipost Ltd. The names and logos for pepipost gem are trademarks of Pepipost Ltd.
 
+<a name="license"></a>
+## License
+This code library was semi-automatically generated by APIMATIC v2.0 and licensed under The MIT License (MIT).
