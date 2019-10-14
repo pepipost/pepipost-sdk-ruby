@@ -22,7 +22,7 @@ body.personalizations[0].attachments[0].file_content = '"SGVsbG8sIHRoaXMgZmlsZSB
 body.personalizations[0].attachments[0].file_name = 'Pepipost.txt'
 body.personalizations[0].recipient_cc = ['my-cc-emailid@gmail.com']
 body.personalizations[0].recipient_bcc = ['my-bcc-emailid@gmail.com']
-body.personalizations[0].x_headers = Xheaders.new('{"custom_key1":"custom_value1","custom_key2":"custom_value2"}').get_xheaders
+body.personalizations[0].xheaders = Xheaders.new('{"custom_key1":"custom_value1","custom_key2":"custom_value2"}').get_xheaders
 
 body.tags = 'tags'
 body.from = From.new
