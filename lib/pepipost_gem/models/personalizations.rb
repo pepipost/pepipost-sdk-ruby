@@ -30,6 +30,14 @@ module PepipostGem
     # @return [List of String]
     attr_accessor :recipient_cc
 
+    # Emails to be passed in Apicall
+    # @return [List of String]
+    attr_accessor :recipient_bcc
+
+    # Emails to be passed in Apicall
+    # @return [Object]
+    attr_accessor :xheaders
+
     # A mapping from model property names to API property names.
     def self.names
       @_hash = {} if @_hash.nil?
@@ -39,6 +47,8 @@ module PepipostGem
       @_hash['attributes'] = 'attributes'
       @_hash['attachments'] = 'attachments'
       @_hash['recipient_cc'] = 'recipient_cc'
+      @_hash['recipient_bcc'] = 'recipient_bcc'
+      @_hash['xheaders'] = 'xheaders'
       @_hash
     end
 
@@ -47,13 +57,17 @@ module PepipostGem
                    x_apiheader = nil,
                    attributes = nil,
                    attachments = nil,
-                   recipient_cc = nil)
+                   recipient_cc = nil,
+                   recipient_bcc = nil,
+                   xheaders = nil)
       @recipient = recipient
       @x_apiheader_cc = x_apiheader_cc
       @x_apiheader = x_apiheader
       @attributes = attributes
       @attachments = attachments
       @recipient_cc = recipient_cc
+      @recipient_bcc = recipient_bcc
+      @xheaders = xheaders
     end
 
     # Creates an instance of the object from a hash.
@@ -74,6 +88,8 @@ module PepipostGem
         end
       end
       recipient_cc = hash['recipient_cc']
+      recipient_bcc = hash['recipient_bcc']
+      xheaders = hash['xheaders']
 
       # Create object from extracted values.
       Personalizations.new(recipient,
@@ -81,7 +97,9 @@ module PepipostGem
                            x_apiheader,
                            attributes,
                            attachments,
-                           recipient_cc)
+                           recipient_cc,
+                           recipient_bcc,
+                           xheaders)
     end
   end
 end

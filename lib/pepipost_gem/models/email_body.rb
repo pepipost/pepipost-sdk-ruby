@@ -27,6 +27,10 @@ module PepipostGem
     attr_accessor :content
 
     # TODO: Write general description for this method
+    # @return [String]
+    attr_accessor :ampcontent
+
+    # TODO: Write general description for this method
     # @return [List of EmailBodyAttachments]
     attr_accessor :attachments
 
@@ -50,6 +54,7 @@ module PepipostGem
       @_hash['from'] = 'from'
       @_hash['subject'] = 'subject'
       @_hash['content'] = 'content'
+      @_hash['ampcontent'] = 'ampcontent'
       @_hash['attachments'] = 'attachments'
       @_hash['settings'] = 'settings'
       @_hash['reply_to_id'] = 'replyToId'
@@ -62,6 +67,7 @@ module PepipostGem
                    from = nil,
                    subject = nil,
                    content = nil,
+                   ampcontent = nil,
                    attachments = nil,
                    settings = nil,
                    reply_to_id = nil,
@@ -71,6 +77,7 @@ module PepipostGem
       @from = from
       @subject = subject
       @content = content
+      @ampcontent = ampcontent
       @attachments = attachments
       @settings = settings
       @reply_to_id = reply_to_id
@@ -94,6 +101,7 @@ module PepipostGem
       from = From.from_hash(hash['from']) if hash['from']
       subject = hash['subject']
       content = hash['content']
+      ampcontent = hash['ampcontent']
       # Parameter is an array, so we need to iterate through it
       attachments = nil
       unless hash['attachments'].nil?
@@ -112,6 +120,7 @@ module PepipostGem
                     from,
                     subject,
                     content,
+                    ampcontent,
                     attachments,
                     settings,
                     reply_to_id,
