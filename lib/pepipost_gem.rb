@@ -32,6 +32,8 @@ require_relative 'pepipost_gem/models/email_body.rb'
 require_relative 'pepipost_gem/models/settings.rb'
 require_relative 'pepipost_gem/models/send_email_error.rb'
 require_relative 'pepipost_gem/models/send_email_response.rb'
+require_relative 'pepipost_gem/models/xheaders.rb'
+require_relative 'pepipost_gem/models/attributes.rb'
 
 # Exceptions
 require_relative 'pepipost_gem/exceptions/api_exception.rb'
