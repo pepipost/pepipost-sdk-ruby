@@ -46,8 +46,10 @@ body.settings.bcc = 'my-bcc-emailid@gmail.com'
 body.reply_to_id = 'reply@gmail.com'
 # body.template_id = 19598
 
+URL = 'https://<api-endpoint>'
+
 begin
-        result = email_controller.create_send_email(api_key, body)
+        result = email_controller.create_send_email(api_key, body, URL)
         puts JSON.pretty_generate(result)
 rescue APIException => ex
         puts "Caught APIException: #{ex.message}"

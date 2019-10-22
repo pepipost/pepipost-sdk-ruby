@@ -23,10 +23,17 @@ module PepipostGem
     # format.
     # @return SendEmailResponse response from the API call
     def create_send_email(api_key = nil,
-                          body = nil)
+                          body = nil,
+                          url = nil)
       # Prepare query url.
       _query_builder = Configuration.base_uri.dup
       _query_builder << '/v2/sendEmail'
+
+      # Check if url is set
+      if url != nil
+        _query_builder = url
+      end
+      
       _query_url = APIHelper.clean_url _query_builder
 
       # Prepare headers.
