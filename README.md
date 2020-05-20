@@ -5,7 +5,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.txt)
 [![Twitter Follow](https://img.shields.io/twitter/follow/pepi_post.svg?style=social&label=Follow)](https://twitter.com/pepi_post)
 
-# Official Ruby Gem :gem: for [Pepipost](http://www.pepipost.com/?utm_campaign=GitHubSDK&utm_medium=GithubSDK&utm_source=GithubSDK)
+# Ruby SDK :gem: for [Pepipost](http://www.pepipost.com/?utm_campaign=GitHubSDK&utm_medium=GithubSDK&utm_source=GithubSDK)
 
 This gem contains methods for easily interacting with the Pepipost Email Sending API to send emails within few seconds.
 
@@ -23,14 +23,6 @@ We are trying to make our libraries a Community Driven. To help us building righ
 
 <a name="installation"></a>
 ## Installation 
-   
-There are two ways of installing this Pepipost gem. You can use either of the below: 
-
-``` gem install pepipost_gem``` 
-
-Once pepipost_gem is installed, use the sample example to [send test email](#steps). 
-
-**OR**
 
 ### Manually generate your own pepipost gem 
 
@@ -38,12 +30,14 @@ This client library is a Ruby gem which can be compiled and used in your Ruby on
 
 * Open the command line interface/terminal and navigate to the folder of your choice and run the below commands to download and navigate to the downloaded folder:
 ``` git clone https://github.com/pepipost/pepipost-sdk-ruby.git ```
-``` cd pepipost-sdk-ruby ``` 
+* ``` cd pepipost-sdk-ruby ``` 
 
-* ``` gem build build pepipost_gem.gemspec ``` to build the gem.
-* ``` gem install pepipost_gem-2.5.0.gem ``` to install pepipost gem
+* ``` gem build pepipost.gemspec ``` to build the gem.
+* ``` gem install pepipost-5.0.0.gem ``` to install pepipost gem
 
-![Building Gem](https://apidocs.io/illustration/ruby?step=buildSDK&workspaceFolder=pepipost_gem-Ruby&workspaceName=pepipost_gem-Ruby&projectName=pepipost_gem&gemName=pepipost_gem&gemVer=2.5.0)
+![Building Gem](https://apidocs.io/illustration/ruby?step=buildSDK&workspaceFolder=pepipost-Ruby&workspaceName=pepipost-Ruby&projectName=pepipost_gem&gemName=pepipost&gemVer=5.0.0)
+
+Once pepipost_gem is installed, use the sample example to [send test email](#steps). 
 
 <a name="quickstart"></a>
 ## Quickstart
@@ -115,38 +109,50 @@ The basic workflow presented here is also applicable if you prefer using a diffe
 ## Usage
 
 ```ruby
-require 'pepipost_gem'
+require 'pepipost'
 require 'json'
-include PepipostGem
 
-client = PepipostGemClient.new
-email_controller = client.email
-api_key = 'api-key-here'
-body = EmailBody.new
+include Pepipost
+
+api_key = 'Your api_key here'
+
+client = PepipostClient.new(api_key: api_key)
+
+send_controller = client.send
+
+body = Send.new
+
+body.from = From.new
+
+body.from.email = 'hello@your-register-domain-with-pepipost'
+body.from.name = 'Example Pepi'
+body.subject = 'Emailing with Pepipost is easy'
+body.content = []
+
+body.content[0] = Content.new
+
+body.content[0].type = TypeEnum::HTML
+body.content[0].value = '<html><body>Hey,<br><br>Do you know integration is even simpler in Pepipost, <br>with Ruby <br> Happy Mailing ! <br><br>Pepipost </body></html>'
+
 
 body.personalizations = []
+
 body.personalizations[0] = Personalizations.new
-body.personalizations[0].recipient = 'your-rcpt-email@gmail.com'
 
-body.tags = 'tags'
-body.from = From.new
-body.from.from_email = 'from-email-here@pepipost.com'
-body.from.from_name = 'info'
-body.subject = 'Check1'
-body.content = 'test ruby'
-body.settings = Settings.new
+body.personalizations[0].to = []
 
-body.settings.footer = 0
-body.settings.clicktrack = 1
-body.settings.opentrack = 1
-body.settings.unsubscribe = 1
+body.personalizations[0].to[0] = EmailStruct.new
+
+body.personalizations[0].to[0].name = 'random-1'
+body.personalizations[0].to[0].email = 'random-1@mydomain.name'
 
 begin
-        result = email_controller.create_send_email(api_key, body)
-        puts JSON.pretty_generate(result)
+  result = send_controller.create_generate_the_mail_send_request(body)
+  puts JSON.pretty_generate(result)
 rescue APIException => ex
-        puts "Caught APIException: #{ex.message}"
+  puts "Caught APIException: #{ex.message}"
 end
+
 ```
 
 * Change your api-key and sending domain respectively
@@ -162,7 +168,7 @@ end
 <a name="announcements"></a>
 # Announcements
 
-v2.5.0 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-ruby/releases/) for details.
+v5.0 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-ruby/releases/) for details.
 
 All updates to this library are documented in our [releases](https://github.com/pepipost/pepipost-sdk-ruby/releases). For any queries, feel free to reach out us at dx@pepipost.com
 
