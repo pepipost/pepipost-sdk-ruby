@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name = 'pepipost'
   s.version = '5.0.0'
   s.summary = 'pepipost'
-  s.description = 'Pepipost is a cloud-based SMTP relay service that delivers highly personalised transactional emails to the inbox within seconds of your customer’s transaction'
+  s.description = 'Pepipost API is used to send the mail to the receipients specified in the docs'
   s.authors = ['APIMatic SDK Generator']
   s.email = 'helpdesk@pepipost.com'
   s.homepage = 'https://apimatic.io'
