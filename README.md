@@ -1,4 +1,4 @@
-![pepipostlogo](https://pepipost.com/wp-content/uploads/2017/07/P_LOGO.png)
+![pepipostlogo](https://pepipost.com/assets/img/pepipost-footLogo.png)
 
 [![Gem Version](https://badge.fury.io/rb/pepipost_gem.svg)](https://badge.fury.io/rb/pepipost_gem)
 [![Open Source Helpers](https://www.codetriage.com/pepipost/pepipost-sdk-ruby/badges/users.svg)](https://www.codetriage.com/pepipost/pepipost-sdk-ruby)
@@ -118,7 +118,7 @@ api_key = 'Your api_key here'
 
 client = PepipostClient.new(api_key: api_key)
 
-send_controller = client.send
+mail_send_controller = client.mail_send
 
 body = Send.new
 
@@ -147,8 +147,8 @@ body.personalizations[0].to[0].name = 'random-1'
 body.personalizations[0].to[0].email = 'random-1@mydomain.name'
 
 begin
-  result = send_controller.create_generate_the_mail_send_request(body)
-  puts JSON.pretty_generate(result)
+  result = mail_send_controller.create_generatethemailsendrequest(body)
+  puts (result)
 rescue APIException => ex
   puts "Caught APIException: #{ex.message}"
 end
