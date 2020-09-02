@@ -40,7 +40,22 @@ module Pepipost
       CustomHeaderAuth.apply(_request)
       _context = execute_request(_request)
       # Validate response against endpoint and global error codes.
-      if _context.response.status_code == 405
+      if _context.response.status_code == 400
+        raise APIException.new(
+          'API Response',
+          _context
+        )
+      elsif _context.response.status_code == 401
+        raise APIException.new(
+          'API Response',
+          _context
+        )
+      elsif _context.response.status_code == 403
+        raise APIException.new(
+          'API Response',
+          _context
+        )
+      elsif _context.response.status_code == 405
         raise APIException.new(
           'Invalid input',
           _context

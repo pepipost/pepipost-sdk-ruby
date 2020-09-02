@@ -17,7 +17,7 @@ module Pepipost
     end
 
     # Lets you enable or disable a subaccount
-    # @param [EnableOrDisableSubacoount] body Required parameter: enable or
+    # @param [Enableordisablesubacoount] body Required parameter: enable or
     # disable subaccount
     # @return Object response from the API call
     def update_subaccounts_patch(body)

@@ -17,11 +17,9 @@ module Pepipost
     end
 
     # Lets you fetch all the subaccounts created by you
-    # @param [String] limit Required parameter: Example:
-    # @param [String] offset Required parameter: Example:
+    # @param [String] username Required parameter: Example:
     # @return Object response from the API call
-    def get_subaccounts_get_sub_accounts_get(limit,
-                                             offset)
+    def get_subaccounts_get_sub_accounts_get(username)
       # Prepare query url.
       _path_url = '/subaccounts/getSubAccounts'
       _query_builder = Configuration.base_uri.dup
@@ -29,8 +27,7 @@ module Pepipost
       _query_builder = APIHelper.append_url_with_query_parameters(
         _query_builder,
         {
-          'limit' => limit,
-          'offset' => offset
+          'username' => username
         },
         array_serialization: Configuration.array_serialization
       )

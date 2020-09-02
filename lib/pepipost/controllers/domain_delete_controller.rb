@@ -17,9 +17,9 @@ module Pepipost
     end
 
     # This endpoint allows you to delete a domain from your Pepipost account.
-    # @param [DeleteDomain] body Required parameter: delete domain
+    # @param [Deletedomain] body Required parameter: delete domain
     # @return Object response from the API call
-    def delete_domain(body)
+    def deletedomain(body)
       # Prepare query url.
       _path_url = '/domain/delete'
       _query_builder = Configuration.base_uri.dup

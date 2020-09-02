@@ -17,7 +17,7 @@ module Pepipost
     end
 
     # Lets you configure a recurring credit allocation to a subaccount
-    # @param [UpdateRecurringCredisOfSubaccount] body Required parameter: Update
+    # @param [UpdaterecurringCredisofsubaccount] body Required parameter: Update
     # recurring credit account
     # @return Object response from the API call
     def create_setrecurringcreditddetails_post(body)

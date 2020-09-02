@@ -17,7 +17,7 @@ module Pepipost
     end
 
     # lets you update credentials and credit type of a subaccount.
-    # @param [UpdateSubaccount] body Required parameter: Update sub account
+    # @param [Updatesubaccount] body Required parameter: Update sub account
     # @return Object response from the API call
     def create_subaccounts_update_subaccount_post(body)
       # Prepare query url.

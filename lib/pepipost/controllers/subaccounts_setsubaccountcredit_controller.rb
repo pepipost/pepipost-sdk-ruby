@@ -17,7 +17,7 @@ module Pepipost
     end
 
     # Lets you add(or remove) credits to a subaccount
-    # @param [UpdateCredisOfSubaccount] body Required parameter: Update credit
+    # @param [UpdateCredisofsubaccount] body Required parameter: Update credit
     # account
     # @return Object response from the API call
     def create_subaccounts_setsubaccountcredit_post(body)

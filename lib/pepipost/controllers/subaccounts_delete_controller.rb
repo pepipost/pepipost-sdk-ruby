@@ -17,7 +17,7 @@ module Pepipost
     end
 
     # Lets you delete a subaccount
-    # @param [DeleteSubacoount] body Required parameter: delete subaccount
+    # @param [Deletesubacoount] body Required parameter: delete subaccount
     # @return Object response from the API call
     def delete_subaccounts_delete_delete(body)
       # Prepare query url.

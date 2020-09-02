@@ -4,9 +4,9 @@
 # https://apimatic.io ).
 
 module Pepipost
-  # SubaccountsCreateSubaccountController
-  class SubaccountsCreateSubaccountController < BaseController
-    @instance = SubaccountsCreateSubaccountController.new
+  # TemplateController
+  class TemplateController < BaseController
+    @instance = TemplateController.new
 
     class << self
       attr_accessor :instance
@@ -16,25 +16,25 @@ module Pepipost
       self.class.instance
     end
 
-    # Subaccount is the same as any regular Pepipost account however the credits
-    # are managed by the master account.
-    # @param [Createsubaccount] body Required parameter: create sub account
+    # Let's you fetch template data using template_id for your pepipost account.
+    # @param [Integer] template_id Required parameter: Example:
     # @return Object response from the API call
-    def create_subaccounts_create_subaccount_post(body)
+    def get_template_get(template_id)
       # Prepare query url.
-      _path_url = '/subaccounts/createSubaccount'
+      _path_url = '/template'
       _query_builder = Configuration.base_uri.dup
       _query_builder << _path_url
+      _query_builder = APIHelper.append_url_with_query_parameters(
+        _query_builder,
+        {
+          'template_id' => template_id
+        },
+        array_serialization: Configuration.array_serialization
+      )
       _query_url = APIHelper.clean_url _query_builder
-      # Prepare headers.
-      _headers = {
-        'content-type' => 'application/json; charset=utf-8'
-      }
       # Prepare and execute HttpRequest.
-      _request = @http_client.post(
-        _query_url,
-        headers: _headers,
-        parameters: body.to_json
+      _request = @http_client.get(
+        _query_url
       )
       CustomHeaderAuth.apply(_request)
       _context = execute_request(_request)

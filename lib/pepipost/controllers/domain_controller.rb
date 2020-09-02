@@ -20,7 +20,7 @@ module Pepipost
     # pre-requisites for sending emails.
     # @param [DomainStruct] body Required parameter: Add new domain
     # @return Object response from the API call
-    def add_domain(body)
+    def adddomain(body)
       # Prepare query url.
       _path_url = '/domain'
       _query_builder = Configuration.base_uri.dup

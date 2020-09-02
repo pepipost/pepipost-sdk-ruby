@@ -44,9 +44,6 @@ module Pepipost
     end
 
     def validate_response(context)
-      if context.response.status_code == 400 || context.response.status_code == 401 || context.response.status_code == 403
-        return 1
-      end
       raise APIException.new 'HTTP Response Not OK', context unless
         context.response.status_code.between?(200, 208) # [200,208] = HTTP OK
     end

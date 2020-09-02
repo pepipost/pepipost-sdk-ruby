@@ -18,10 +18,10 @@ module Pepipost
 
     # This API allows you to suppress an email address and block any future
     # email delivery attempts on this email address.
-    # @param [AddEmailOrDomainToSuppressionList] body Required parameter: add
+    # @param [AddemailordomaintoSuppressionlist] body Required parameter: add
     # email or domain to suppression list
     # @return Object response from the API call
-    def add_domain_or_email_to_suppression_list(body)
+    def adddomainoremailtosuppressionlist(body)
       # Prepare query url.
       _path_url = '/suppression'
       _query_builder = Configuration.base_uri.dup
@@ -70,10 +70,10 @@ module Pepipost
     # suppression list. You can remove multiple email addresses and recipient
     # domains together by passing them as values & separating them using commas
     # as shown below.
-    # @param [RemoveEmailOrDomainToSuppressionList] body Required parameter:
+    # @param [RemoveemailordomaintoSuppressionlist] body Required parameter:
     # remove email or domain to suppression list
     # @return Object response from the API call
-    def remove_domain_or_email_to_suppression_list(body)
+    def removedomainoremailtosuppressionlist(body)
       # Prepare query url.
       _path_url = '/suppression'
       _query_builder = Configuration.base_uri.dup
