@@ -13,7 +13,7 @@ module Pepipost
       @http_call_back = http_call_back
 
       @global_headers = {
-        'user-agent' => 'APIMATIC 2.0'
+        'user-agent' => 'pepi-sdk-ruby-v5.1'
       }
     end
 

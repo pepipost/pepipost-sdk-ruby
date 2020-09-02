@@ -9,7 +9,7 @@ module Pepipost
   # are configured in this class.
   class Configuration
     # The base Uri for API calls
-    @base_uri = 'https://api.pepipost.com/v5'
+    @base_uri = 'https://api.pepipost.com/v5.1'
 
     # Your Pepipost API Key. You will find the api key in the Pepipost application in Integrations.
     @api_key = 'TODO: Replace'

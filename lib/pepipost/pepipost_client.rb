@@ -42,6 +42,12 @@ module Pepipost
       SubaccountsGetSubAccountsController.instance
     end
 
+    # Singleton access to subaccounts_getcreditddetails controller.
+    # @return [SubaccountsGetcreditddetailsController] Returns the controller instance.
+    def subaccounts_getcreditddetails
+      SubaccountsGetcreditddetailsController.instance
+    end
+
     # Singleton access to setrecurringcreditddetails controller.
     # @return [SetrecurringcreditddetailsController] Returns the controller instance.
     def setrecurringcreditddetails
@@ -76,6 +82,18 @@ module Pepipost
     # @return [DomainDeleteController] Returns the controller instance.
     def domain_delete
       DomainDeleteController.instance
+    end
+
+    # Singleton access to domain_get_domains controller.
+    # @return [DomainGetDomainsController] Returns the controller instance.
+    def domain_get_domains
+      DomainGetDomainsController.instance
+    end
+
+    # Singleton access to template controller.
+    # @return [TemplateController] Returns the controller instance.
+    def template
+      TemplateController.instance
     end
 
     # Singleton access to domain controller.
